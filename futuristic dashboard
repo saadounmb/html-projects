@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Futuristic Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .dashboard {
+      display: flex;
+      height: 100vh;
+    }
+
+    .sidebar {
+      width: 220px;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(10px);
+      padding: 2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      box-shadow: 2px 0 10px #0ff;
+    }
+
+    .sidebar h2 {
+      text-align: center;
+      color: #0ff;
+      text-shadow: 0 0 10px #0ff;
+    }
+
+    .sidebar nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 0.75rem 1rem;
+      display: block;
+      border-left: 4px solid transparent;
+      transition: 0.3s;
+    }
+
+    .sidebar nav a:hover {
+      border-left: 4px solid #0ff;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(5px);
+    }
+
+    .search {
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 50px;
+      outline: none;
+      width: 200px;
+    }
+
+    .avatar {
+      width: 40px;
+      height: 40px;
+      background: url('https://i.pravatar.cc/40') no-repeat center/cover;
+      border-radius: 50%;
+      border: 2px solid #0ff;
+    }
+
+    .cards {
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 2rem;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      backdrop-filter: blur(15px);
+      box-shadow: 0 0 10px #0ff88f66;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 20px #0ff;
+    }
+
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #1a1a1a;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #0ff;
+      border-radius: 5px;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        display: none;
+      }
+      .main {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="dashboard">
+    <aside class="sidebar">
+      <h2>⚡ Dash</h2>
+      <nav>
+        <a href="#">🏠 Home</a>
+        <a href="#">📊 Analytics</a>
+        <a href="#">⚙️ Settings</a>
+      </nav>
+    </aside>
+    <main class="main">
+      <header class="header">
+        <input type="text" placeholder="Search..." class="search" />
+        <div class="avatar"></div>
+      </header>
+      <section class="cards">
+        <div class="card">Card One</div>
+        <div class="card">Card Two</div>
+        <div class="card">Card Three</div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
