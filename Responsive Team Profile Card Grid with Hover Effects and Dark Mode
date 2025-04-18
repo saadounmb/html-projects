@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Responsive Profile Cards</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f2f2f2;
+      color: #333;
+      padding: 2rem;
+    }
+
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+
+    .name {
+      font-size: 1.3rem;
+      font-weight: bold;
+      margin-bottom: 0.3rem;
+    }
+
+    .role {
+      font-size: 1rem;
+      color: #777;
+      margin-bottom: 1rem;
+    }
+
+    .bio {
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .socials a {
+      margin: 0 0.5rem;
+      font-size: 1.2rem;
+      text-decoration: none;
+      color: #333;
+    }
+
+    .socials a:hover {
+      color: #0077cc;
+    }
+
+    /* Dark Mode */
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #121212;
+        color: #f0f0f0;
+      }
+      .card {
+        background-color: #1e1e1e;
+        color: #ddd;
+      }
+      .socials a {
+        color: #ccc;
+      }
+      .socials a:hover {
+        color: #1e90ff;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1 style="text-align:center; margin-bottom: 2rem;">Meet Our Team</h1>
+
+  <div class="card-container">
+    <div class="card">
+      <img src="https://i.pravatar.cc/100?img=3" alt="Avatar" class="avatar" />
+      <div class="name">Alice Smith</div>
+      <div class="role">Frontend Developer</div>
+      <div class="bio">Passionate about beautiful UIs and clean code.</div>
+      <div class="socials">
+        <a href="#">🌐</a>
+        <a href="#">🐦</a>
+        <a href="#">💼</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://i.pravatar.cc/100?img=5" alt="Avatar" class="avatar" />
+      <div class="name">Brian Lee</div>
+      <div class="role">UX Designer</div>
+      <div class="bio">Designing with empathy and user experience in mind.</div>
+      <div class="socials">
+        <a href="#">🌐</a>
+        <a href="#">📸</a>
+        <a href="#">🎨</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://i.pravatar.cc/100?img=12" alt="Avatar" class="avatar" />
+      <div class="name">Carla Gomez</div>
+      <div class="role">Project Manager</div>
+      <div class="bio">Keeping projects on track and teams in sync.</div>
+      <div class="socials">
+        <a href="#">🌐</a>
+        <a href="#">📘</a>
+        <a href="#">📞</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
